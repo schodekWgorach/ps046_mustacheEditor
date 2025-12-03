@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+/node_modules/
+
+
+
+
+
+
+
+
+
+
+
+
+# Firebase cache directory
+.firebase/
+
+
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+

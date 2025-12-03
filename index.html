@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zdobywca - Edytor Wąsów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Zdobywca</h1>
+            <p class="subtitle">Edytor wąsów - dodaj styl swojemu zdjęciu</p>
+        </header>
+        
+        <main>
+            <div class="workspace">
+                <!-- Lewy panel z wąsami -->
+                <aside class="mustache-panel">
+                    <h2>Wybierz wąsy</h2>
+                    <div class="mustache-grid">
+                        <div class="mustache-item" data-mustache="1">
+                            <canvas class="mustache-canvas" width="100" height="40"></canvas>
+                            <span>Wąsy klasyczne</span>
+                        </div>
+                        <div class="mustache-item" data-mustache="2">
+                            <canvas class="mustache-canvas" width="100" height="40"></canvas>
+                            <span>Wąsy grube</span>
+                        </div>
+                        <div class="mustache-item" data-mustache="3">
+                            <canvas class="mustache-canvas" width="100" height="40"></canvas>
+                            <span>Wąsy cienkie</span>
+                        </div>
+                        <div class="mustache-item" data-mustache="4">
+                            <canvas class="mustache-canvas" width="100" height="40"></canvas>
+                            <span>Wąsy zakręcone</span>
+                        </div>
+                        <div class="mustache-item" data-mustache="5">
+                            <canvas class="mustache-canvas" width="100" height="40"></canvas>
+                            <span>Wąsy proste</span>
+                        </div>
+                        <div class="mustache-item" data-mustache="6">
+                            <canvas class="mustache-canvas" width="100" height="40"></canvas>
+                            <span>Wąsy stylowe</span>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Środkowy panel roboczy -->
+                <section class="work-area">
+                    <div class="upload-section" id="uploadSection">
+                        <div class="upload-box">
+                            <input type="file" id="imageInput" accept=".jpg,.jpeg" style="display: none;">
+                            <div class="upload-content">
+                                <div class="upload-icon">📸</div>
+                                <h3>Załaduj zdjęcie</h3>
+                                <p>Obsługiwany format: JPG</p>
+                                <button class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                                    Wybierz plik
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="canvas-container" id="canvasContainer" style="display: none;">
+                        <canvas id="mainCanvas"></canvas>
+                        <div class="placed-mustaches" id="placedMustaches"></div>
+                    </div>
+                    
+                    <div class="controls" id="controls" style="display: none;">
+                        <button class="btn btn-primary" id="addMustacheBtn">
+                            <span class="btn-icon">➕</span>
+                            Dodaj wąsy
+                        </button>
+                        <button class="btn btn-secondary" id="exportBtn">
+                            <span class="btn-icon">💾</span>
+                            Eksportuj JPG
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Zdobywca - Edytor wąsów</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
