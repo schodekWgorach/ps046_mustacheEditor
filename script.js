@@ -120,7 +120,7 @@ class MustacheEditor {
             { type: 'classic', color: '#2d3748' },
             { type: 'thick', color: '#1a202c' },
             { type: 'thin', color: '#4a5568' },
-            { type: 'curly', color: '#2d3748' },
+            { type: 'curly', color: 'red' },
             { type: 'straight', color: '#1a202c' },
             { type: 'stylish', color: '#2d3748' }
         ];
