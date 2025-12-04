@@ -117,7 +117,7 @@ class MustacheEditor {
 
     drawMustacheTemplates() {
         const templates = [
-            { type: 'classic', color: '#2d3748' },
+            { type: 'classic', color: 'red' },
             { type: 'thick', color: '#1a202c' },
             { type: 'thin', color: '#4a5568' },
             { type: 'curly', color: '#2d3748' },
@@ -141,13 +141,13 @@ class MustacheEditor {
 
         switch (type) {
             case 'classic':
-                // Classic mustache
-                ctx.beginPath();
-                ctx.ellipse(x - size/2, y, size/2, size/4, 0, 0, Math.PI * 2);
-                ctx.ellipse(x + size/2, y, size/2, size/4, 0, 0, Math.PI * 2);
-                ctx.fill();
+                // Classic mustache - load from image
+                const classicImg = new Image();
+                classicImg.src = 'assets/mustaches/classic.jpg'; // Ścieżka do pliku
+                classicImg.onload = () => {
+                    ctx.drawImage(classicImg, x - size / 2, y - size / 2, size, size / 2); // Adjust position and size
+                };
                 break;
-                
             case 'thick':
                 // Thick mustache
                 ctx.beginPath();
@@ -189,7 +189,7 @@ class MustacheEditor {
                 ctx.quadraticCurveTo(x - size/2, y - size/3, x, y);
                 ctx.quadraticCurveTo(x + size/2, y - size/3, x + size, y);
                 ctx.quadraticCurveTo(x + size/2, y + size/3, x, y);
-                ctx.quadraticCurveTo(x - size/2, y + size/3, x - size, y);
+                ctx.quadraticCurveTo(x - size/3, y + size/3, x - size, y);
                 ctx.fill();
                 break;
         }
